@@ -5,7 +5,6 @@ import { ContentLanguage } from '@src/i18n';
 import { Theme } from '@src/utils';
 
 import { settingStyles } from './Setting.style';
-import { Screen } from '../../navigation/appNavigation.type';
 
 const themes = ['Dark', 'Light', 'Theme1', 'Theme2', 'Theme3'];
 
