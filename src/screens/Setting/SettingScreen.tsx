@@ -14,7 +14,7 @@ const SettingScreen = () => {
     appTheme,
     handleChangeLanguage,
     handleChangeTheme,
-    handleLogin,
+    goBackHandler,
     language,
     languages,
     styles,
@@ -24,10 +24,10 @@ const SettingScreen = () => {
   return (
     <BaseLayout>
       <View style={styles.header}>
-        <Text preset="h1">{contents('setting.settingScreen')}</Text>
+        <Text>{contents('setting.settingScreen')}</Text>
       </View>
       <View style={styles.content}>
-        <Text preset="h3" textAlign="center">
+        <Text textAlign="center">
           {contents('setting.theme')}
         </Text>
         {themes.map(m => {
@@ -36,7 +36,7 @@ const SettingScreen = () => {
               containerStyle={styles.themes}
               onPress={handleChangeTheme(m.toLowerCase())}
               key={`${m}`}>
-              <Text preset="h4">{m}</Text>
+              <Text>{m}</Text>
               <AnimatedTouchableOpacity
                 onPress={handleChangeTheme(m.toLowerCase())}
                 containerStyle={styles.radio}>
@@ -48,7 +48,7 @@ const SettingScreen = () => {
           );
         })}
 
-        <Text preset="h3" textAlign="center">
+        <Text textAlign="center">
           {contents('setting.languages')}
         </Text>
         {languages.map(m => {
@@ -57,12 +57,12 @@ const SettingScreen = () => {
               onPress={handleChangeLanguage(m)}
               containerStyle={styles.themes}
               key={`${m}`}>
-              <Text preset="h4">{m}</Text>
+              <Text>{m}</Text>
               <AnimatedTouchableOpacity
                 onPress={handleChangeLanguage(m)}
                 containerStyle={styles.radio}>
                 {ContentLanguage[m as keyof typeof ContentLanguage] ===
-                language ? (
+                  language ? (
                   <View style={styles.selectedRadio} />
                 ) : null}
               </AnimatedTouchableOpacity>
@@ -70,9 +70,10 @@ const SettingScreen = () => {
           );
         })}
         <Button
-          title="Login"
+          title="Go back"
           buttonContainerStyle={styles.btn}
-          onPress={handleLogin}
+          titleStyle={styles.btnText}
+          onPress={goBackHandler}
         />
       </View>
     </BaseLayout>

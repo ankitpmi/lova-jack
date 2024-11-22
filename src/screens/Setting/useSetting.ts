@@ -37,8 +37,8 @@ const useSetting = () => {
     [setLanguageInApp]
   );
 
-  const handleLogin = useCallback(() => {
-    navigation.navigate(Screen.LOGIN);
+  const goBackHandler = useCallback(() => {
+    navigation.goBack()
   }, [navigation]);
 
   // add your code here
@@ -48,7 +48,7 @@ const useSetting = () => {
     color,
     handleChangeLanguage,
     handleChangeTheme,
-    handleLogin,
+    goBackHandler,
     language,
     languages,
     navigation,

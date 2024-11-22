@@ -1,5 +1,4 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Storage as ReduxStorage } from 'redux-persist';
 
 import type { STORAGES_KEY } from '@src/constants';
 import { logger } from '@src/utils';
@@ -43,19 +42,5 @@ export const storage = {
   setData,
 };
 
-export const reduxStorage: ReduxStorage = {
-  getItem: async key => {
-    const value = await AsyncStorage.getItem(key);
-    return Promise.resolve(value);
-  },
-  removeItem: async key => {
-    await AsyncStorage.removeItem(key);
-    return Promise.resolve();
-  },
-  setItem: async (key, value) => {
-    await AsyncStorage.setItem(key, value);
-    return Promise.resolve(true);
-  },
-};
 
 export type Storage = typeof storage;

@@ -86,7 +86,7 @@ const ${useHookFileName}Screen = () => {
 
   return (
     <View style={styles.container}>
-      <Text preset="h1">${useHookFileName} Screen</Text>
+      <Text>${useHookFileName} Screen</Text>
     </View>
   );
 };

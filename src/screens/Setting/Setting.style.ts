@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import { Palette, scaled, scaleHeight, scaleWidth } from '@src/utils';
 
-export const settingStyles = ({ primaryColor }: Palette) =>
+export const settingStyles = ({ primaryColor, backgroundColor }: Palette) =>
   StyleSheet.create({
     btn: {
       marginTop: scaleHeight(30),
@@ -32,4 +32,7 @@ export const settingStyles = ({ primaryColor }: Palette) =>
       justifyContent: 'space-between',
       marginVertical: scaleHeight(5),
     },
+    btnText: {
+      color: backgroundColor
+    }
   });

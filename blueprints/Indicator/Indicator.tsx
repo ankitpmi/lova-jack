@@ -62,7 +62,7 @@ export const IndicatorViewRef = (
           color={color.primaryColor}
           style={styles.loaderStyle}
         />
-        <Text preset="h2" color={color.textColor}>
+        <Text color={color.textColor}>
           Please wait ...
         </Text>
       </View>
